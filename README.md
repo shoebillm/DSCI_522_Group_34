@@ -22,7 +22,7 @@ If re-using/re-mixing please provide attribution and link to this webpage.
 <div id="refs" class="references hanging-indent">
 
 <div id="ref-Dua2019">
-AUTHOR. YEAR. TITLE OF THE DATASET. PUBLICATION. <URL HERE>.
+AUTHOR. YEAR. TITLE OF THE DATASET. PUBLICATION. URL_HERE.
 
 </div>
 
