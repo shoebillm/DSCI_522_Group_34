@@ -45,6 +45,7 @@ If re-using/re-mixing please provide attribution and link to this webpage.
 Source data website. https://vancouver.ca
 
 <div id="ref-Dua2019">
+
 VanDashboard website. VanDashboard showcases performance data for select City of Vancouver services. It includes indicators of how well we are delivering key services, along with progress on our overall goals and strategies. Each category has a number of indicators you can check out to see how we’re doing. https://opendata.vancouver.ca/pages/vandashboard/
 
 </div>
