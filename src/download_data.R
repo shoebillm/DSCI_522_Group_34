@@ -1,4 +1,3 @@
-# download data with R placeholder
 # author: UBC MDS Group 34
 # date: 2020-11-20
 
@@ -17,6 +16,4 @@ main <- function(opt) {
     cat("Dataset successfully saved in", opt$output)
 }
     
-main(opt)    
-
-
+main(opt)
