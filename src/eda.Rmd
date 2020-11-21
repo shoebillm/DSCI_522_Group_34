@@ -14,7 +14,7 @@ library(ggplot2)
 
 The dataset used in this project provides information on the location of sites with graffiti as identified by City staff. It is sourced from the [Vancouver Open Data Portal](https://opendata.vancouver.ca/pages/home/), specifically [this file](https://opendata.vancouver.ca/explore/dataset/graffiti/information/). The license of data can be found [here](https://opendata.vancouver.ca/pages/licence/).
 
-There are 8,028 rows and 3 columns in our dataset. Each row in the dataset record the counts the number of graffiti incidents by the geographic local area of Vancouver along with the spatial representation of the location by coordinates stored as JSON format.
+There are 8,028 rows and 3 columns in our dataset. Each row in the dataset records the counts the number of graffiti incidents by the geographic local area of Vancouver along with the spatial representation of the location by coordinates stored as JSON format.
 
 ```{r load data, warning=FALSE}
 graffiti <- read_delim("../data/dataset.csv", delim = ";")
@@ -23,7 +23,7 @@ glimpse(graffiti)
 ```
 
 We are investigating into 2 local areas of Vancouver; they are the 'Downtown' and the 'Strathcona' regions.
-We attempt to conduct a Hypothesis testing with a suitable test flavor to answer a statistical research question, that is, whether the number of graffiti per location of Vancouver's downtown area differs from the number of graffiti per location of the Vancouver Strathcona area. 
+We attempt to conduct a hypothesis testing with a suitable test flavor to answer a statistical research question, that is, whether the number of graffiti per location of Vancouver's downtown area differs from the number of graffiti per location of the Vancouver Strathcona area. 
 
 After selecting relevant columns, there are 2,121 observations related our research interest and below we
 show the number of observations for each interested Vancouver region and the first few line of the dataset .
@@ -51,6 +51,20 @@ kable(summarise(graffiti,
 
 # Exploratory analysis on the dataset
 
-```{r eda}
+From the below violin plot of the distributions of two classes, we can observe the sample distributions are skewed to the right.
+Based on the data visualizations, we can say a suitable estimator for our research question is the median because we are interested in the most common number of the graffiti in the two regions and the central tendency of the distribution is most helpful for this given the shape of this sample distribution is bell-shaped and skewed to the right. The long right tail of the distributions also make the median the suitable test flavor because median is not as sensitive to extreme values as it is mathematically defined by the middle value of a distribution.
 
+```{r eda}
+graffiti %>%
+    ggplot(aes(x = geo_local_area, y = count)) +
+        geom_violin(trim = FALSE) +
+        stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "blue") +
+        ggtitle("Distribution of graffiti count by Vancouver region") +
+        ylab("graffiti count") +
+        xlab("Vancouver region")
 ```
+
+Figure 1. Distribution of graffiti count by Vancouver region
+
+## Reference
+“Graffiti.” City of Vancouver Open Data Portal, 3 Feb. 2020, [https://opendata.vancouver.ca/explore/dataset/graffiti/information/](https://opendata.vancouver.ca/explore/dataset/graffiti/information/).
