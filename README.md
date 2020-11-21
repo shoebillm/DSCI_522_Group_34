@@ -8,16 +8,22 @@ British Columbia.
 
 ## About
 
-Here we attempt to conduct a Hypothesis testing with a suitable test flavour
+Here we attempt to conduct a hypothesis testing with a suitable test flavour
 to answer a statistical research question, that is, whether 
 the number of graffiti per location of Vancouver's downtown area 
 differs from the number of graffiti per location of the Vancouver 
 Strathcona area. We proposed to sequentially do exploratory data 
 analysis, determine what features and columns to be retrieved to support 
-our Hypothesis testing, and attach with a suitable test flavour 
-to verify whether the median/mean number of graffiti per location 
-of Vancouver's downtown area differs from the median/mean number of 
+our hypothesis testing, and attach with a suitable test flavour 
+to verify whether the median number of graffiti per location 
+of Vancouver's downtown area differs from the median number of 
 graffiti per location of Vancouver's Strathcona area. 
+
+According to the data visualizations, a suitable estimator for 
+our research question is the median since we are interested in 
+the most common number of graffiti in the two regions and 
+the median is not as sensitive to extreme values as it is 
+mathematically defined by the the middle value of a distribution.
 
 The data set that was used in this milestone 1 project is of information 
 on the location of sites with graffiti as identified by City staff. 
@@ -37,7 +43,7 @@ for our hypothesis testing.
 ## Report
 
 The final report can be found
-[here](https://github.com/UBC-MDS/DSCI_522_Group_34).
+[here](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/eda.md).
 
 ## Project Collaboration
 We created the following 4 files that are important for collaboration:
@@ -74,6 +80,13 @@ Quantile estimation by Thomas Bzik.
 
 The missing question in supervised learning blog 
 post by Vincenzo Coia. <https://github.com/vincenzocoia/vincenzocoia.github.io/blob/b9a5b5023e7d3dc0b135c032c7b1aa67376240db/_posts/2018-02-18-mean.md>.
+
+</div>
+
+<div id="data">
+
+“Graffiti.” City of Vancouver Open Data Portal, 3 Feb. 2020,
+<https://opendata.vancouver.ca/explore/dataset/graffiti/information/>.
 
 </div>
 
