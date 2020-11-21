@@ -52,6 +52,14 @@ We created the following 4 files that are important for collaboration:
   3. [Contributing file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/CONTRIBUTING.md)
   4. [License file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/LICENSE.md)
 
+## Dependencies
+
+  - R version 4.0.2 and R packages:
+      - knitr=1.29
+      - docopt=0.7.1
+      - tidyverse=1.3.0
+      - ggplot2=3.3.2
+
 ## License
 
 The DSCI_522_Group_34 materials here are licensed under 
