@@ -39,6 +39,13 @@ for our hypothesis testing.
 The final report can be found
 [here](https://github.com/UBC-MDS/DSCI_522_Group_34).
 
+## Project Collaboration
+We created the following 4 files that are important for collaboration:
+  1. [Team work contract](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/TEAM_WORK_CONTRACT.md)
+  2. [Code of Conduct file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/CODE_OF_CONDUCT.md)
+  3. [Contributing file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/CONTRIBUTING.md)
+  4. [License file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/LICENSE.md)
+
 ## License
 
 The DSCI_522_Group_34 materials here are licensed under 
