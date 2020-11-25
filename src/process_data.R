@@ -5,8 +5,8 @@
 "This script downloads the dataset and stores it in the designated location.
 Usage: process_data.R --input=<input_file> --output=<output_file>
 Options:
---input=<input_file>    Takes a local relative file path to read input data
---output=<output_file>  Takes a local relative file path to store processed data
+--input=<input_file>    Takes a local relative relative filename path to read input data
+--output=<output_file>  Takes a local relative relative filename path to store processed data
 " -> doc
 
 library(docopt)
