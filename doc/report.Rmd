@@ -1,1 +1,118 @@
+---
+title: "Predicting breast cancer from digitized images of breast mass"
+author: "Kangbo Lu, Siqi Zhou, Mitchie Zhao，Mengyuan Zhu </br>"
+date: "2020/11/26 (updated: `r Sys.Date()`)"
+always_allow_html: true
+output: 
+  html_document:
+    toc: true
+  github_document:
+    toc: true
+#bibliography: breast_cancer_refs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(caret)
+```
+
+
+
+# Summary
+
+Here we use the simulated method to test whether the null hypothesis stands: "the median number of graffiti per location of Vancouver's downtown area is the same from the median number of graffiti per location of Vancouver's Strathcona area".
+We set the threshold as 0.5, use a two-ended testing method, which indicate the two quantiles are 0.025 and 0.975.
+
+We led a simulation with 10000 permutations, then calculated the p-value to assist us in determination.
+
+# Introduction
+
+Here we attempt to conduct a hypothesis testing with a suitable test flavour
+to answer a statistical research question, that is, whether 
+the number of graffiti per location of Vancouver's downtown area 
+differs from the number of graffiti per location of the Vancouver 
+Strathcona area. We proposed to sequentially do exploratory data 
+analysis, determine what features and columns to be retrieved to support 
+our hypothesis testing, and attach with a suitable test flavour 
+to verify whether the median number of graffiti per location 
+of Vancouver's downtown area differs from the median number of 
+graffiti per location of Vancouver's Strathcona area. 
+
+According to the data visualizations, a suitable estimator for 
+our research question is the median since we are interested in 
+the most common number of graffiti in the two regions and 
+the median is not as sensitive to extreme values as it is 
+mathematically defined by the the middle value of a distribution.
+
+# Methods
+
+A permutation test computes the sampling distribution for any test statistic, under the ‘strong null hypothesis’ that a set of genetic variants has absolutely no effect on the outcome.
+To estimate the sampling distribution of the test statistic we need many samples generated under the strong null hypothesis.
+If the null hypothesis is true, changing the exposure would have no effect on the outcome. By randomly shuffling the exposures we can make up as many ‘null’ data sets as we like.
+If the null hypothesis is true, the shuffled data sets should look like the real data. Otherwise, they should look different from the real data.
+Comparing the shuffled test statistics to the real test statistic gives a p-value.
+
+To illustrate this we need many replications of a permutation test. We will do 1000 permutation tests for a mean, each with 1000 permutations.
+
+With 10000 permutations the smallest possible p-value is 0.0001, and the uncertainty near p = 0.05 is about ±0.4%.
+
+
+ 
+## Data
+The data set that was used in this milestone 1 project is of information 
+on the location of sites with graffiti as identified by City staff. 
+This data in City systems is updated in the normal course of business, 
+however, priorities and resources determine how fast a change, in reality, 
+is reflected in the database. The extract on this web site is updated weekly. 
+Locations are identified by address and therefore locations are approximate.
+And it can be found 
+[here](https://opendata.vancouver.ca/pages/home/),
+specifically [this
+file](https://opendata.vancouver.ca/explore/dataset/graffiti/information/?sort=count&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJib3hwbG90IiwiZnVuYyI6IkNPVU5UIiwieUF4aXMiOiJjb3VudCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiMwMjc5QjEiLCJjaGFydHMiOlt7ImZ1bmMiOiJNSU4iLCJ5QXhpcyI6ImNvdW50In0seyJmdW5jIjoiUVVBTlRJTEVTIiwieUF4aXMiOiJjb3VudCIsInN1YnNldHMiOjI1fSx7ImZ1bmMiOiJRVUFOVElMRVMiLCJ5QXhpcyI6ImNvdW50Iiwic3Vic2V0cyI6NTB9LHsiZnVuYyI6IlFVQU5USUxFUyIsInlBeGlzIjoiY291bnQiLCJzdWJzZXRzIjo3NX0seyJmdW5jIjoiTUFYIiwieUF4aXMiOiJjb3VudCJ9XX1dLCJ4QXhpcyI6Imdlb19sb2NhbF9hcmVhIiwibWF4cG9pbnRzIjo1MCwic29ydCI6IiIsImNvbmZpZyI6eyJkYXRhc2V0IjoiZ3JhZmZpdGkiLCJvcHRpb25zIjp7InNvcnQiOiJjb3VudCJ9fX1dLCJ0aW1lc2NhbGUiOiIiLCJkaXNwbGF5TGVnZW5kIjp0cnVlLCJhbGlnbk1vbnRoIjp0cnVlfQ%3D%3D&location=14,49.28084,-123.09806).
+
+## Analysis
+there are 3 columns related to 
+our proposal. They are "COUNT", "GEO LOCAL AREA" and "GEOM". 
+We utilized the "COUNT" and "GEO LOCAL AREA" columns to do permutation 
+for our hypothesis testing.
+A permutation test computes the sampling distribution for any test statistic, under the ‘strong null hypothesis’ that a set of genetic variants has absolutely no effect on the outcome.
+To estimate the sampling distribution of the test statistic we need many samples generated under the strong null hypothesis.
+If the null hypothesis is true, changing the exposure would have no effect on the outcome. By randomly shuffling the exposures we can make up as many ‘null’ data sets as we like.
+If the null hypothesis is true, the shuffled data sets should look like the real data. Otherwise, they should look different from the real data.
+Comparing the shuffled test statistics to the real test statistic gives a p-value.
+
+To illustrate this we need many replications of a permutation test. We will do 10000 permutation tests for a median.
+
+With 10000 permutations the smallest possible p-value is 0.0001, and the uncertainty near p = 0.05 is about ±0.4%.
+
+The R and Python programming languages [@R; @Python] and the following R and Python packages were used to perform the analysis: caret [@caret], docopt [@docopt], feather [@featherr], knitr [@knitr], tidyverse [@tidyverse], docopt [@docoptpython], os [@Python], feather [@featherpy] Pandas [@mckinney-proc-scipy-2010]. The code used to perform the analysis and create this report can be found here: https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R.
+
+# Results & Discussion
+First we calculated the median values of the counts of the 2 areas of our interest.
+The median for the 2 classes of our interest are listed below:
+
+```{r median value of the 2 classes, echo=FALSE, fig.cap="Figure 1. Results of computed median values of the 2 classes", out.width = '60%'}
+knitr::include_graphics("../results/table1.png")
+```
+
+To look at whether our null hypothesis is valid, we led a simulation with 10000 permutations, the figure below shows the distribution of this simulated process.
+
+```{r null-distributions, echo=FALSE, fig.cap="Figure 1. The simulation-based distribution of the null hypothesis", out.width = '100%'}
+knitr::include_graphics("../results/analysis.png")
+```
+
+
+
+Then we calculated the corresponding p-value of the distribution:
+
+```{r p-values, echo=FALSE, fig.cap="Figure 2. The corresponding p value of the null hypothesis", out.width = '100%'}
+knitr::include_graphics("../results/table2.png")
+```
+
+
+To further improve this test in future, we need to do following things: 
+
 
