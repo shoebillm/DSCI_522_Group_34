@@ -1,5 +1,6 @@
 # author: UBC MDS Group 34
 # date: 2020-11-25
+# Example: Rscript src/process_data.R --input="data/dataset.csv" --output="data/processed/processed.csv"
 
 "This script downloads the dataset and stores it in the designated location.
 Usage: process_data.R --input=<input_file> --output=<output_file>
