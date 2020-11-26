@@ -1,5 +1,5 @@
 ---
-title: "Predicting breast cancer from digitized images of breast mass"
+title: "Null hypothesis test for the counts of graffiti in two areas of Vancouver"
 author: "Kangbo Lu, Siqi Zhou, Mitchie Zhao，Mengyuan Zhu </br>"
 date: "2020/11/26 (updated: `r Sys.Date()`)"
 always_allow_html: true
@@ -8,7 +8,7 @@ output:
     toc: true
   github_document:
     toc: true
-#bibliography: breast_cancer_refs.bib
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -19,11 +19,10 @@ library(tidyverse)
 library(caret)
 ```
 
-
-
 # Summary
 
-Here we use the simulated method to test whether the null hypothesis stands: "the median number of graffiti per location of Vancouver's downtown area is the same from the median number of graffiti per location of Vancouver's Strathcona area".
+Here we use the simulated method to test whether the null hypothesis stands: "the number of graffiti of Vancouver's downtown area is the same as the number of graffiti of Vancouver's Strathcona area".
+
 We set the threshold as 0.5, use a two-ended testing method, which indicate the two quantiles are 0.025 and 0.975.
 
 We led a simulation with 10000 permutations, then calculated the p-value to assist us in determination.
@@ -32,9 +31,11 @@ We led a simulation with 10000 permutations, then calculated the p-value to assi
 
 Here we attempt to conduct a hypothesis testing with a suitable test flavour
 to answer a statistical research question, that is, whether 
-the number of graffiti per location of Vancouver's downtown area 
-differs from the number of graffiti per location of the Vancouver 
-Strathcona area. We proposed to sequentially do exploratory data 
+the number of graffiti of Vancouver's downtown area 
+differs from the number of graffiti of the Vancouver 
+Strathcona area. 
+
+We proposed to sequentially do exploratory data 
 analysis, determine what features and columns to be retrieved to support 
 our hypothesis testing, and attach with a suitable test flavour 
 to verify whether the median number of graffiti per location 
@@ -49,7 +50,17 @@ mathematically defined by the the middle value of a distribution.
 
 # Methods
 
-A permutation test computes the sampling distribution for any test statistic, under the ‘strong null hypothesis’ that a set of genetic variants has absolutely no effect on the outcome.
+Here we chose the estimator as median. The reason is that the count of graffiti per location in each area is not normal distributed and has outliers according to the population distribution, see the figure below. And median is less sensitive to the skewness and outliers.
+
+```{r distribution in eda, echo=FALSE, fig.cap="Figure 1. Distribution of graffiti count by Vancouver region: downtown and Strathcona area", out.width = '60%'}
+knitr::include_graphics("../src/eda_files/figure-gfm/eda-1.png")
+```
+
+
+As for the test flavor, we chose the permutation test.A permutation test computes the sampling distribution for any test statistic, under the ‘strong null hypothesis’ that a set of genetic variants has absolutely no effect on the outcome.
+
+As for the test statistic, we use delta represent the difference of the median values of the counts of graffiti in each area.
+
 To estimate the sampling distribution of the test statistic we need many samples generated under the strong null hypothesis.
 If the null hypothesis is true, changing the exposure would have no effect on the outcome. By randomly shuffling the exposures we can make up as many ‘null’ data sets as we like.
 If the null hypothesis is true, the shuffled data sets should look like the real data. Otherwise, they should look different from the real data.
@@ -62,7 +73,7 @@ With 10000 permutations the smallest possible p-value is 0.0001, and the uncerta
 
  
 ## Data
-The data set that was used in this milestone 1 project is of information 
+The data set that was used in this milestone 2 project is of information 
 on the location of sites with graffiti as identified by City staff. 
 This data in City systems is updated in the normal course of business, 
 however, priorities and resources determine how fast a change, in reality, 
@@ -88,19 +99,19 @@ To illustrate this we need many replications of a permutation test. We will do 1
 
 With 10000 permutations the smallest possible p-value is 0.0001, and the uncertainty near p = 0.05 is about ±0.4%.
 
-The R and Python programming languages [@R; @Python] and the following R and Python packages were used to perform the analysis: caret [@caret], docopt [@docopt], feather [@featherr], knitr [@knitr], tidyverse [@tidyverse], docopt [@docoptpython], os [@Python], feather [@featherpy] Pandas [@mckinney-proc-scipy-2010]. The code used to perform the analysis and create this report can be found here: https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R.
+The R and Python programming languages [@R; @Python] and the following R and Python packages were used to perform the analysis: caret [@caret], docopt [@docopt], knitr [@knitr], tidyverse [@tidyverse],os [@Python]. The code used to perform the analysis and create this report can be found here: https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R.
 
 # Results & Discussion
 First we calculated the median values of the counts of the 2 areas of our interest.
 The median for the 2 classes of our interest are listed below:
 
-```{r median value of the 2 classes, echo=FALSE, fig.cap="Figure 1. Results of computed median values of the 2 classes", out.width = '60%'}
+```{r median value of the 2 classes, echo=FALSE, fig.cap="Figure 1. Results of computed median values of the 2 classes", out.width = '40%'}
 knitr::include_graphics("../results/table1.png")
 ```
 
 To look at whether our null hypothesis is valid, we led a simulation with 10000 permutations, the figure below shows the distribution of this simulated process.
 
-```{r null-distributions, echo=FALSE, fig.cap="Figure 1. The simulation-based distribution of the null hypothesis", out.width = '100%'}
+```{r null-distributions, echo=FALSE, fig.cap="Figure 1. The simulation-based distribution of the null hypothesis", out.width = '40%'}
 knitr::include_graphics("../results/analysis.png")
 ```
 
@@ -108,11 +119,12 @@ knitr::include_graphics("../results/analysis.png")
 
 Then we calculated the corresponding p-value of the distribution:
 
-```{r p-values, echo=FALSE, fig.cap="Figure 2. The corresponding p value of the null hypothesis", out.width = '100%'}
+```{r p-values, echo=FALSE, fig.cap="Figure 2. The corresponding p value of the null hypothesis", out.width = '40%'}
 knitr::include_graphics("../results/table2.png")
 ```
 
 
-To further improve this test in future, we need to do following things: 
+Carrying out Mood test, we got p-value is 1, which is larger than 0.05. We don’t have enough confidence to reject the null hypotheses. It indicated that there is no statistically significant difference between the median of counts of graffiti in the 2 areas in Vancouver.
 
+# References
 
