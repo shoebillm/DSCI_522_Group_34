@@ -2,7 +2,7 @@
 
 - Contributors: Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu
 
-A data analysis project of group 34 of a data analysis project for DSCI 522 (Data Science workflows); a
+A data analysis project of group 34 for DSCI 522 (Data Science workflows); a
 course in the Master of Data Science program at the University of
 British Columbia.
 
@@ -75,11 +75,18 @@ Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document
 
 ## Dependencies
 
+  - Python 3.8.3 and Python packages:
+      - docopt==0.6.2
+      - requests==2.23.0
+      - pandas==1.1.1
+
   - R version 4.0.2 and R packages:
-      - knitr=1.29
-      - docopt=0.7.1
-      - tidyverse=1.3.0
-      - ggplot2=3.3.2
+      - knitr==1.29
+      - docopt==0.7.1
+      - tidyverse==1.3.0
+      - ggplot2==3.3.2
+      - RCurl==1.98.1.2
+      - infer==0.5.3
 
 ## License
 
