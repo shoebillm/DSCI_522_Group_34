@@ -13,7 +13,6 @@ library(docopt)
 library(tidyverse)
 library(ggplot2)
 library(infer)
-library(broom)
 
 opt <- docopt(doc)
 
