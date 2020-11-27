@@ -8,35 +8,18 @@ British Columbia.
 
 ## About
 
-Here we attempt to conduct a hypothesis testing with a simulation 
-including 10000 permutations and a suitable test flavour
+Here we attempt to conduct a two-tailed permutation test 
 to answer a statistical research question, that is, whether 
 the number of graffiti per location of Vancouver's downtown area 
 differs from the number of graffiti per location of the Vancouver 
 Strathcona area. We proposed to sequentially do exploratory data 
 analysis, determine what features and columns to be retrieved to support 
-our permutation testing, and attach with a suitable test flavour 
+our permutation testing, and attach with a suitable test flavour as median
 to verify whether the median number of graffiti per location 
-of Vancouver's downtown area differs from the median number of 
-graffiti per location of Vancouver's Strathcona area. 
-
-According to the data visualizations, a suitable estimator for 
-our research question is the median since we are interested in 
-the most common number of graffiti in the two regions and 
-the median is not as sensitive to extreme values as it is 
-mathematically defined by the middle value of a distribution.
-Considering the skewness of our sample distribution, we set the 
-significance level as 0.05 with the two-tailed permutation test method to 
-study the difference in the median, plotted the confidence interval 
-of the simulated null-distribution with the test statistics, 
-and calculated the p-value as 1 to conclude. 
-
-Hence there is no statistically significant difference between the 
-median of counts of graffiti per recorded location in the 2 areas in Vancouver. 
-We don’t have enough confidence to reject the null hypothesis that 
-the median number of graffiti per recorded location of Vancouver Downtown 
-area is the same as the median number of graffiti per recorded 
-location of Vancouver Strathcona area.
+of Vancouver's downtown area differs from Vancouver's Strathcona area. 
+To summarize, there is no statistically significant difference between the 
+median of counts of graffiti per recorded location in these 2 areas in Vancouver
+since the p-value is 1, larger than the significance level as 0.05.
 
 The data set that was used in this milestone 1 project is of information 
 on the location of sites with graffiti as identified by City staff. 
