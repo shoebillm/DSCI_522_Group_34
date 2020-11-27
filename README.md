@@ -2,7 +2,7 @@
 
 - Contributors: Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu
 
-Milestone 1 of group 34 of a data analysis project for DSCI 522 (Data Science workflows); a
+A data analysis project of group 34 of a data analysis project for DSCI 522 (Data Science workflows); a
 course in the Master of Data Science program at the University of
 British Columbia.
 
