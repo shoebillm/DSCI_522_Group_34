@@ -26,7 +26,7 @@ the most common number of graffiti in the two regions and
 the median is not as sensitive to extreme values as it is 
 mathematically defined by the middle value of a distribution.
 Considering the skewness of our sample distribution, we set the 
-$\alpha = 0.05$ with the two-tailed permutation test method to 
+\\alpha = 0.05 with the two-tailed permutation test method to 
 study the difference in the median, plotted the confidence interval 
 of the simulated null-distribution with the test statistics, 
 and calculated the p-value as 1 to conclude. 
