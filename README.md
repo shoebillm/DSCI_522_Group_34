@@ -21,7 +21,7 @@ To summarize, there is no statistically significant difference between the
 median of counts of graffiti per recorded location in these 2 areas in Vancouver
 since the p-value is 1, larger than the significance level as 0.05.
 
-The data set that was used in this milestone 1 project is of information 
+The data set that was used in this research project is of information 
 on the location of sites with graffiti as identified by City staff. 
 This data in City systems is updated in the normal course of business, 
 however, priorities and resources determine how fast a change, in reality, 
