@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu " />
 
 
-<title>Hypothesis testing for the counts of graffiti in two areas of Vancouver</title>
+<title>report.utf8</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -423,13 +422,13 @@ summary {
 
 
 
-<h1 class="title toc-ignore">Hypothesis testing for the counts of graffiti in two areas of Vancouver</h1>
-<h4 class="author">Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu </br></h4>
-<h4 class="date">2020/11/26 (updated: 2020-11-27)</h4>
 
 </div>
 
-<div id="TOC">
+
+<div id="hypothesis-testing-for-the-counts-of-graffiti-in-two-areas-of-vancouver" class="section level1">
+<h1>Hypothesis testing for the counts of graffiti in two areas of Vancouver</h1>
+<p>Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu </br> 2020/11/26 (updated: 2020-11-27)</p>
 <ul>
 <li><a href="#summary">Summary</a></li>
 <li><a href="#introduction">Introduction</a></li>
@@ -442,11 +441,10 @@ summary {
 <li><a href="#references">References</a></li>
 </ul>
 </div>
-
 <div id="summary" class="section level1">
 <h1>Summary</h1>
 <p>In this research project, we try to answer the research question of whether the number of graffiti of Vancouver’s Downtown area is the same as the number of graffiti of Vancouver’s Strathcona area.</p>
-<p>Due to the skewness of our sample distribution, we used the median as the test statistics and set the <span class="math inline">\(\alpha = 0.05\)</span> with the two-tailed permutation test method to study the difference in the median.</p>
+<p>Due to the skewness of our sample distribution, we used the median as the test statistics and set the <em>α</em> = 0.05 with the two-tailed permutation test method to study the difference in the median.</p>
 <p>For statistical analysis, we conducted a simulation with 10000 permutations, plotted the confidence interval of the simulated null-distribution with the test statistics, and calculated the p-value to draw conclusion.</p>
 </div>
 <div id="introduction" class="section level1">
@@ -454,7 +452,7 @@ summary {
 <p>Here we attempt to conduct a hypothesis testing with a suitable test flavor to answer a statistical research question, that is, whether the number of graffiti of Vancouver’s downtown area differs from the number of graffiti of the Vancouver Strathcona area.</p>
 <p>We proposed to sequentially do exploratory data analysis, determine what features and columns to be retrieved to support our hypothesis testing, and attach with a suitable test flavor to verify whether the median number of graffiti per location of Vancouver’s downtown area differs from the median number of graffiti per location of Vancouver’s Strathcona area.</p>
 <p>According to the data visualizations, a suitable estimator for our research question is the median since we are interested in the most common number of graffiti in the two regions and the median is not as sensitive to extreme values as it is mathematically defined by the the middle value of a distribution.</p>
-<p>The R and Python programming languages <span class="citation">(R Core Team 2020; Van Rossum and Drake 2009)</span> and the following R and Python packages were used to perform the analysis: docopt <span class="citation">(de Jonge 2018)</span>, knitr <span class="citation">(Xie 2020)</span>, tidyverse <span class="citation">(Wickham et al. 2019)</span>, ggplot2 <span class="citation">(Wickham 2016)</span>, infer <span class="citation">(Bray et al. 2020)</span>. The code used to perform the analysis and create this report can be found here: <a href="https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R" class="uri">https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R</a>.</p>
+<p>The R and Python programming languages (R Core Team 2020; Van Rossum and Drake 2009) and the following R and Python packages were used to perform the analysis: docopt (de Jonge 2018), knitr (Xie 2020), tidyverse (Wickham et al. 2019), ggplot2 (Wickham 2016), infer (Bray et al. 2020). The code used to perform the analysis and create this report can be found here: <a href="https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R" class="uri">https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R</a>.</p>
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
@@ -471,12 +469,12 @@ Figure 1. Distribution of graffiti count by Vancouver region: downtown and Strat
 </div>
 <div id="statistical-analysis" class="section level2">
 <h2>Statistical Analysis</h2>
-<p>To estimate the sampling distribution of the test statistic we need many samples generated under the strong null hypothesis. If the null hypothesis is true, changing the exposure would have no effect on the outcome. By randomly shuffling the exposures we can make up as many ‘null’ data sets as we like. If the null hypothesis is true, the shuffled data sets should look like the real data. Otherwise, they should look different from the real data. Comparing the shuffled test statistics to the real test statistic gives a p-value. Then, we compare the p-value with our defined threshold <span class="math inline">\(\alpha = 0.05\)</span> to draw conclusion for our research question.</p>
+<p>To estimate the sampling distribution of the test statistic we need many samples generated under the strong null hypothesis. If the null hypothesis is true, changing the exposure would have no effect on the outcome. By randomly shuffling the exposures we can make up as many ‘null’ data sets as we like. If the null hypothesis is true, the shuffled data sets should look like the real data. Otherwise, they should look different from the real data. Comparing the shuffled test statistics to the real test statistic gives a p-value. Then, we compare the p-value with our defined threshold <em>α</em> = 0.05 to draw conclusion for our research question.</p>
 <p><strong>Estimator:</strong><br />
 median number of graffiti per recorded location</p>
 <p><strong>Hypothesis</strong><br />
-<span class="math inline">\(H_0\)</span>: the median number of graffiti per recorded location of Vancouver Downtown area is the same as the median number of graffiti per recorded location of Vancouver Strathcona area</p>
-<p><span class="math inline">\(H_a\)</span>: the median number of graffiti per recorded location of Vancouver Downtown area is not the same as the median number of graffiti per recorded location of Vancouver Strathcona area</p>
+<em>H</em><sub>0</sub>: the median number of graffiti per recorded location of Vancouver Downtown area is the same as the median number of graffiti per recorded location of Vancouver Strathcona area</p>
+<p><em>H</em><sub><em>a</em></sub>: the median number of graffiti per recorded location of Vancouver Downtown area is not the same as the median number of graffiti per recorded location of Vancouver Strathcona area</p>
 <p><strong>Test Flavor</strong><br />
 Two tailed permutation test for the median.</p>
 <p><strong>Test Statistics</strong><br />
@@ -508,29 +506,29 @@ Figure 2. The corresponding p-value of the null hypothesis
 <p>The test statistics is 0 for the sample. Calculating p-value from null distribution, we got p-value is 1, which is larger than 0.05. It indicated that there is no statistically significant difference between the median of counts of graffiti per recorded location in the 2 areas in Vancouver. We don’t have enough confidence to reject the null hypothesis that the median number of graffiti per recorded location of Vancouver Downtown area is the same as the median number of graffiti per recorded location of Vancouver Strathcona area.</p>
 </div>
 </div>
-<div id="references" class="section level1 unnumbered">
-<h1 class="unnumbered">References</h1>
+<div id="references" class="section level1">
+<h1>References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-infer" class="csl-entry">
-Bray, Andrew, Chester Ismay, Evgeni Chasnovski, Ben Baumer, and Mine Cetinkaya-Rundel. 2020. <em>Infer: Tidy Statistical Inference</em>. <a href="https://CRAN.R-project.org/package=infer">https://CRAN.R-project.org/package=infer</a>.
+Bray, Andrew, Chester Ismay, Evgeni Chasnovski, Ben Baumer, and Mine Cetinkaya-Rundel. 2020. <em>Infer: Tidy Statistical Inference</em>. <a href="https://CRAN.R-project.org/package=infer" class="uri">https://CRAN.R-project.org/package=infer</a>.
 </div>
 <div id="ref-docopt" class="csl-entry">
-de Jonge, Edwin. 2018. <em>Docopt: Command-Line Interface Specification Language</em>. <a href="https://CRAN.R-project.org/package=docopt">https://CRAN.R-project.org/package=docopt</a>.
+de Jonge, Edwin. 2018. <em>Docopt: Command-Line Interface Specification Language</em>. <a href="https://CRAN.R-project.org/package=docopt" class="uri">https://CRAN.R-project.org/package=docopt</a>.
 </div>
 <div id="ref-R" class="csl-entry">
-R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.
 </div>
 <div id="ref-Python" class="csl-entry">
 Van Rossum, Guido, and Fred L. Drake. 2009. <em>Python 3 Reference Manual</em>. Scotts Valley, CA: CreateSpace.
 </div>
 <div id="ref-ggplot2" class="csl-entry">
-Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org" class="uri">https://ggplot2.tidyverse.org</a>.
 </div>
 <div id="ref-tidyverse" class="csl-entry">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the <span class="nocase">tidyverse</span>.” <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686" class="uri">https://doi.org/10.21105/joss.01686</a>.
 </div>
 <div id="ref-knitr" class="csl-entry">
-Xie, Yihui. 2020. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2020. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.
 </div>
 </div>
 </div>

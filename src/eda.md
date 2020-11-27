@@ -1,8 +1,7 @@
 Exploratory data analysis of Vancouver Graffiti Data
 ================
 
-Summary of the dataset
-======================
+# Summary of the dataset
 
 The dataset used in this project provides information on the location of
 sites with graffiti as identified by City staff. It is sourced from the
@@ -18,20 +17,20 @@ geographic local area of Vancouver along with the spatial representation
 of the location by coordinates stored as JSON format.
 
     ## # A tibble: 6 x 3
-    ##   COUNT `Geo Local Area`      Geom                                              
-    ##   <dbl> <chr>                 <chr>                                             
-    ## 1     1 Kitsilano             "{\"type\": \"Point\", \"coordinates\": [-123.185~
-    ## 2     5 Kensington-Cedar Cot~ "{\"type\": \"Point\", \"coordinates\": [-123.059~
-    ## 3     6 Downtown              "{\"type\": \"Point\", \"coordinates\": [-123.100~
-    ## 4     6 Downtown              "{\"type\": \"Point\", \"coordinates\": [-123.100~
-    ## 5     1 Riley Park            "{\"type\": \"Point\", \"coordinates\": [-123.099~
-    ## 6     7 Kitsilano             "{\"type\": \"Point\", \"coordinates\": [-123.148~
+    ##   COUNT `Geo Local Area` Geom                                                   
+    ##   <dbl> <chr>            <chr>                                                  
+    ## 1     2 Downtown         "{\"type\": \"Point\", \"coordinates\": [-123.10795912~
+    ## 2     1 Marpole          "{\"type\": \"Point\", \"coordinates\": [-123.13997544~
+    ## 3     3 Downtown         "{\"type\": \"Point\", \"coordinates\": [-123.12418600~
+    ## 4     2 West Point Grey  "{\"type\": \"Point\", \"coordinates\": [-123.18648218~
+    ## 5     1 Strathcona       "{\"type\": \"Point\", \"coordinates\": [-123.09135856~
+    ## 6     1 Downtown         "{\"type\": \"Point\", \"coordinates\": [-123.10936456~
 
-    ## Rows: 8,028
+    ## Rows: 8,027
     ## Columns: 3
-    ## $ COUNT            <dbl> 1, 5, 6, 6, 1, 7, 7, 5, 1, 1, 2, 12, 3, 1, 9, 2, 1...
-    ## $ `Geo Local Area` <chr> "Kitsilano", "Kensington-Cedar Cottage", "Downtown...
-    ## $ Geom             <chr> "{\"type\": \"Point\", \"coordinates\": [-123.1853...
+    ## $ COUNT            <dbl> 2, 1, 3, 2, 1, 1, 6, 4, 1, 11, 13, 3, 3, 2, 2, 4, ...
+    ## $ `Geo Local Area` <chr> "Downtown", "Marpole", "Downtown", "West Point Gre...
+    ## $ Geom             <chr> "{\"type\": \"Point\", \"coordinates\": [-123.1079...
 
 We are investigating into 2 local areas of Vancouver; they are the
 ‘Downtown’ and the ‘Strathcona’ regions. We attempt to conduct a
@@ -49,12 +48,12 @@ each interested Vancouver region and the first few line of the dataset .
     ## # A tibble: 6 x 2
     ##   count geo_local_area
     ##   <dbl> <chr>         
-    ## 1     6 Downtown      
-    ## 2     6 Downtown      
-    ## 3     2 Strathcona    
-    ## 4     9 Downtown      
-    ## 5     2 Downtown      
-    ## 6     1 Downtown
+    ## 1     2 Downtown      
+    ## 2     3 Downtown      
+    ## 3     1 Strathcona    
+    ## 4     1 Downtown      
+    ## 5     6 Downtown      
+    ## 6    11 Strathcona
 
 | Downtown | Strathcona |
 |---------:|-----------:|
@@ -62,8 +61,7 @@ each interested Vancouver region and the first few line of the dataset .
 
 Table 1. Counts of observation for each class.
 
-Exploratory analysis on the dataset
-===================================
+# Exploratory analysis on the dataset
 
 From the below violin plot of the distributions of two classes, we can
 observe the sample distributions are skewed to the right. Based on the
@@ -80,8 +78,7 @@ mathematically defined by the middle value of a distribution.
 
 Figure 1. Distribution of graffiti count by Vancouver region
 
-Reference
----------
+## Reference
 
 “Graffiti.” City of Vancouver Open Data Portal, 3 Feb. 2020,
 <https://opendata.vancouver.ca/explore/dataset/graffiti/information/>.

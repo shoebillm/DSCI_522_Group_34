@@ -65,6 +65,31 @@ We created the following 4 files that are important for collaboration:
   3. [Contributing file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/CONTRIBUTING.md)
   4. [License file](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/LICENSE.md)
 
+## Usage  
+To replicate the analysis, clone this GitHub repository, install the dependencies listed below, and run the following commands at the command line/terminal from the root directory of this project:
+
+```
+# download data using Python
+python src/download_data.py --url="https://opendata.vancouver.ca/explore/dataset/graffiti/download/?format=csv&timezone=Asia/Shanghai&lang=en&use_labels_for_header=true&csv_separator=%3B" --output_path="./data/dataset.csv"
+
+OR
+
+# download data using R
+Rscript src/download_data.R --url="https://opendata.vancouver.ca/explore/dataset/graffiti/download/?format=csv&timezone=Asia/Shanghai&lang=en&use_labels_for_header=true&csv_separator=%3B" --output="./data/dataset.csv"
+
+# run eda report
+Rscript -e "rmarkdown::render('src/eda.Rmd')"
+
+# pre-process data 
+Rscript src/process_data.R --input="data/dataset.csv" --output="data/processed/processed.csv"
+
+# create exploratory data analysis figure and write to file 
+Rscript src/eda_graffiti.R --input="data/processed/processed.csv" --output="results/graffiti_eda.png"
+
+# render final report
+Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document')"
+```
+
 ## Dependencies
 
   - R version 4.0.2 and R packages:
