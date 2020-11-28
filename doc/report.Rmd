@@ -102,5 +102,8 @@ knitr::include_graphics("../results/table2.png")
 
 The test statistics is 0 for the sample. The calculated p-value is 1, which is larger than 0.05. It indicated that there is no statistically significant difference between the median of counts of graffiti per recorded location in the 2 areas in Vancouver. We don’t have enough confidence to reject the null hypothesis that the median number of graffiti per recorded location of Vancouver Downtown area is the same as the median number of graffiti per recorded location of Vancouver Strathcona area.
 
+Future work includes further exploratory data analysis to take full advantage of the coordinate data on the map to understand the distribution of graffiti in different areas of Vancouver. To analyze the Downtown and Strathcona area is a bit segmentary to represent the whole regional situation of Vancouver. We would study and observe the graffiti situation and differences in other areas based on a more macroscopic perspective. Another hypothesis testing might be conducted as a statistical analysis comparison of our current permutation test. Meanwhile, we also might improve the preprocessing to eliminate redundant and unrepresentative data points since there are many zero values in terms of Downtown and Strathcona areas, leading to a very centralized distribution. 
+
+
 # References
 
