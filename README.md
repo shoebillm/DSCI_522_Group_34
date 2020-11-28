@@ -17,29 +17,17 @@ analysis, determine what features and columns to be retrieved to support
 our permutation testing, and attach with a suitable test flavour as median
 to verify whether the median number of graffiti per location 
 of Vancouver's downtown area differs from Vancouver's Strathcona area. 
-To summarize, there is no statistically significant difference between the 
+After conducting exploratory data analysis and hypothesis testing, the results show 
+there is no statistically significant difference between the 
 median of counts of graffiti per recorded location in these 2 areas in Vancouver
-since the p-value is 1, larger than the significance level as 0.05.
+since the p-value is 1 and it's larger than the significance level of 0.05.
 
-The data set that was used in this research project is of information 
-on the location of sites with graffiti as identified by City staff. 
-This data in City systems is updated in the normal course of business, 
-however, priorities and resources determine how fast a change, in reality, 
-is reflected in the database. The extract on this web site is updated weekly. 
-Locations are identified by address and therefore locations are approximate.
-And it can be found 
-[here](https://opendata.vancouver.ca/pages/home/),
-specifically [this
-file](https://opendata.vancouver.ca/explore/dataset/graffiti/information/?sort=count&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJib3hwbG90IiwiZnVuYyI6IkNPVU5UIiwieUF4aXMiOiJjb3VudCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiMwMjc5QjEiLCJjaGFydHMiOlt7ImZ1bmMiOiJNSU4iLCJ5QXhpcyI6ImNvdW50In0seyJmdW5jIjoiUVVBTlRJTEVTIiwieUF4aXMiOiJjb3VudCIsInN1YnNldHMiOjI1fSx7ImZ1bmMiOiJRVUFOVElMRVMiLCJ5QXhpcyI6ImNvdW50Iiwic3Vic2V0cyI6NTB9LHsiZnVuYyI6IlFVQU5USUxFUyIsInlBeGlzIjoiY291bnQiLCJzdWJzZXRzIjo3NX0seyJmdW5jIjoiTUFYIiwieUF4aXMiOiJjb3VudCJ9XX1dLCJ4QXhpcyI6Imdlb19sb2NhbF9hcmVhIiwibWF4cG9pbnRzIjo1MCwic29ydCI6IiIsImNvbmZpZyI6eyJkYXRhc2V0IjoiZ3JhZmZpdGkiLCJvcHRpb25zIjp7InNvcnQiOiJjb3VudCJ9fX1dLCJ0aW1lc2NhbGUiOiIiLCJkaXNwbGF5TGVnZW5kIjp0cnVlLCJhbGlnbk1vbnRoIjp0cnVlfQ%3D%3D&location=14,49.28084,-123.09806).
-As for the data schema, mainly there are 3 columns related to 
-our proposal. They are "COUNT", "GEO LOCAL AREA" and "GEOM". 
-We utilized the "COUNT" and "GEO LOCAL AREA" columns to do permutation 
-for our hypothesis testing.
+In the research project, the dataset provides information on the location of sites with graffiti as identified by the Vancouver city staff. The graffiti location data is sourced from the Vancouver Open Data Portal and it can be found [here](https://opendata.vancouver.ca/pages/home/), specifically [this file](https://opendata.vancouver.ca/explore/dataset/graffiti/download/?format=csv&timezone=Asia/Shanghai&lang=en&use_labels_for_header=true&csv_separator=%3B). As for the data schema, there are three columns related to our research interest. The columns are named as "COUNT", "GEO LOCAL AREA" and "GEOM". We utilized the "COUNT" and the "GEO LOCAL AREA" columns to conduct a permutation test with the difference in medians to study the graffiti situation in the Vancouver Downtown area and the Vancouver Strathcona area.
 
 ## Report
 
 The final report can be found
-[here](https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/eda.md).
+[here](./doc/report.md).
 
 ## Project Collaboration
 We created the following 4 files that are important for collaboration:
