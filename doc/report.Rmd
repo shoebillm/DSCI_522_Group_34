@@ -19,52 +19,52 @@ library(tidyverse)
 
 # Summary
 
-In this research project, we try to answer the research question of whether the number of graffiti of Vancouver's Downtown area is the same as the number of graffiti of Vancouver's Strathcona area.
+In this research project, we tried to answer the research question of whether the number of graffiti of Vancouver's Downtown area is the same as the number of graffiti of Vancouver's Strathcona area.
 
 Due to the skewness of our sample distribution, we used the median as the test statistics and set the $\alpha = 0.05$ with the two-tailed permutation test method to study the difference in the median.
 
-For statistical analysis, we conducted a simulation with 10000 permutations, plotted the confidence interval of the simulated null-distribution with the test statistics, and calculated the p-value to draw conclusion.
+For statistical analysis, we conducted a simulation with 10000 permutation replicates, plotted the confidence interval of the simulated null-distribution with the test statistics, and calculated the p-value to draw the conclusion.
 
 # Introduction
 
-Here we attempt to conduct a hypothesis testing with a suitable test flavor
+Here we attempted to conduct a hypothesis test with a suitable test flavor
 to answer a statistical research question, that is, whether 
 the number of graffiti of Vancouver's downtown area 
 differs from the number of graffiti of the Vancouver 
-Strathcona area. 
+Strathcona area [@graffiti]. 
 
 We proposed to sequentially do exploratory data 
 analysis, determine what features and columns to be retrieved to support 
 our hypothesis testing, and attach with a suitable test flavor 
 to verify whether the median number of graffiti per location 
 of Vancouver's downtown area differs from the median number of 
-graffiti per location of Vancouver's Strathcona area. 
+graffiti per location of Vancouver's Strathcona area [@moderndive]. 
 
 According to the data visualizations, a suitable estimator for 
 our research question is the median since we are interested in 
 the most common number of graffiti in the two regions and 
 the median is not as sensitive to extreme values as it is 
-mathematically defined by the the middle value of a distribution.
+mathematically defined by the the 50th percentile of a distribution [@percentile].
 
 The R and Python programming languages [@R; @Python] and the following R and Python packages were used to perform the analysis: docopt [@docopt], knitr [@knitr], tidyverse [@tidyverse], ggplot2 [@ggplot2], infer [@infer]. The code used to perform the analysis and create this report can be found here: https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R.
 
 # Methods
 
 ## Exploratory Data Analysis
-The dataset used in this project provides information on the location of sites with graffiti as identified by City staff. It is sourced from the Vancouver Open Data Portal, specifically specifically [this file](https://opendata.vancouver.ca/explore/dataset/graffiti/information). The license of data can be found [here](https://opendata.vancouver.ca/pages/home/).
+The dataset used in this project provides information on the location of sites with graffiti as identified by City staff. It was sourced from the Vancouver Open Data Portal, specifically [this file](https://opendata.vancouver.ca/explore/dataset/graffiti/information). The license of data can be found [here](https://opendata.vancouver.ca/pages/home/).
 
 ```{r distribution in eda, echo=FALSE, fig.cap="Figure 1. Distribution of graffiti count by Vancouver region: downtown and Strathcona area", out.width = '60%'}
 knitr::include_graphics("../src/eda_files/figure-gfm/eda-1.png")
 ```
 
-After conducting exploratory data analysis, we chose the median as the estimator. From the above violin plot of the distributions of two classes, we can observe the sample distributions are skewed to the right. The long right tail of the distributions also make the median the suitable test flavor because median is not as sensitive to extreme values as it is mathematically defined by the middle value of a distribution.
+After conducting exploratory data analysis, we chose the median as the estimator. From the above violin plot of the distributions of two classes, we can observe the sample distributions are skewed to the right. The long right tail of the distributions also makes the median a suitable test flavor, since the median is not as sensitive to extreme values as it is mathematically defined by the 50th percentile of a distribution.
 
 ## Statistical Analysis
 
-To estimate the sampling distribution of the test statistic we need many samples generated under the strong null hypothesis.
+To estimate the sampling distribution of the test statistic we need many samples generated under the null hypothesis.
 If the null hypothesis is true, changing the exposure would have no effect on the outcome. By randomly shuffling the exposures we can make up as many ‘null’ data sets as we like.
-If the null hypothesis is true, the shuffled data sets should look like the real data. Otherwise, they should look different from the real data.
-Comparing the shuffled test statistics to the real test statistic gives a p-value. Then, we compare the p-value with our defined threshold $\alpha = 0.05$ to draw conclusion for our research question.
+If the null hypothesis is true, the shuffled data sets should look similar to the real data. Otherwise, they should look different from the real data.
+Comparing the shuffled test statistics to the real test statistics gives a p-value. Then, we compared the p-value with our defined threshold $\alpha = 0.05$ to draw the conclusion for our research question.
 
 **Estimator:**  
 median number of graffiti per recorded location
@@ -78,7 +78,7 @@ $H_a$: the median number of graffiti per recorded location of Vancouver Downtown
 Two tailed permutation test for the median.  
 
 **Test Statistics**  
-We use delta represent the difference of the median values of the counts of graffiti in each area.
+We used delta to represent the difference between the median counts of graffiti in each area.
 
 ## Results & Discussion
 First we calculated the median values of the counts of the 2 areas of our interest.
@@ -88,19 +88,19 @@ The medians of the count of graffiti per location of the two areas are listed be
 knitr::include_graphics("../results/table1.png")
 ```
 
-To look at whether our null hypothesis is valid, we conducted a simulation with 10000 permutations with the differences in medians. The figure below visualize the simulated null distribution with the test statistics.
+To look at whether our null hypothesis is valid, we conducted a simulation with 10000 permutation replicates with the differences in medians. The figure below visualizes the simulated null distribution with the test statistics.
 
 ```{r null-distributions, echo=FALSE, fig.cap="Figure 1. The simulation-based distribution of the null hypothesis", out.width = '40%'}
 knitr::include_graphics("../results/analysis.png")
 ```
 
-Then, we calculated the corresponding p-value of the null distribution for drawing conclusion:
+Then, we calculated the corresponding p-value of the null distribution for drawing the conclusion:
 
 ```{r p-values, echo=FALSE, fig.cap="Figure 2. The corresponding p-value of the null hypothesis", out.width = '40%'}
 knitr::include_graphics("../results/table2.png")
 ```
 
-The test statistics is 0 for the sample. Calculating p-value from null distribution, we got p-value is 1, which is larger than 0.05. It indicated that there is no statistically significant difference between the median of counts of graffiti per recorded location in the 2 areas in Vancouver. We don’t have enough confidence to reject the null hypothesis that the median number of graffiti per recorded location of Vancouver Downtown area is the same as the median number of graffiti per recorded location of Vancouver Strathcona area.
+The test statistics is 0 for the sample. The calculated p-value is 1, which is larger than 0.05. It indicated that there is no statistically significant difference between the median of counts of graffiti per recorded location in the 2 areas in Vancouver. We don’t have enough confidence to reject the null hypothesis that the median number of graffiti per recorded location of Vancouver Downtown area is the same as the median number of graffiti per recorded location of Vancouver Strathcona area.
 
 # References
 
