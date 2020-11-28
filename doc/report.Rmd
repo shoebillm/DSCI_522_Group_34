@@ -44,7 +44,7 @@ According to the data visualizations, a suitable estimator for
 our research question is the median since we are interested in 
 the most common number of graffiti in the two regions and 
 the median is not as sensitive to extreme values as it is 
-mathematically defined by the the 50th percentile of a distribution [@percentile].
+mathematically defined by the the 50th percentile of a distribution [@quantile].
 
 The R and Python programming languages [@R; @Python] and the following R and Python packages were used to perform the analysis: docopt [@docopt], knitr [@knitr], tidyverse [@tidyverse], ggplot2 [@ggplot2], infer [@infer]. The code used to perform the analysis and create this report can be found here: https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R.
 
