@@ -129,7 +129,7 @@ two areas are listed below:
 
 <div class="figure">
 
-<img src="../results/table1.png" alt="Table 1. Results of computed median values of the 2 classes" width="40%" />
+<img src="../results/table1.png" alt="Table 1. Results of computed median values of the 2 classes" width="50%" />
 <p class="caption">
 Table 1. Results of computed median values of the 2 classes
 </p>
@@ -143,7 +143,7 @@ with the test statistics.
 
 <div class="figure">
 
-<img src="../results/analysis.png" alt="Figure 2. The simulation-based distribution of the null hypothesis" width="40%" />
+<img src="../results/analysis.png" alt="Figure 2. The simulation-based distribution of the null hypothesis" width="50%" />
 <p class="caption">
 Figure 2. The simulation-based distribution of the null hypothesis
 </p>
@@ -155,7 +155,7 @@ for drawing the conclusion:
 
 <div class="figure">
 
-<img src="../results/table2.png" alt="Table 2. The corresponding p-value of the null hypothesis" width="40%" />
+<img src="../results/table2.png" alt="Table 2. The corresponding p-value of the null hypothesis" width="50%" />
 <p class="caption">
 Table 2. The corresponding p-value of the null hypothesis
 </p>

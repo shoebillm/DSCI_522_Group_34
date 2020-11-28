@@ -84,19 +84,19 @@ We used delta to represent the difference between the median counts of graffiti 
 First we calculated the median values of the counts of the 2 areas of our interest.
 The medians of the count of graffiti per location of the two areas are listed below:
 
-```{r median value of the 2 classes, echo=FALSE, fig.cap="Table 1. Results of computed median values of the 2 classes", out.width = '40%'}
+```{r median value of the 2 classes, echo=FALSE, fig.cap="Table 1. Results of computed median values of the 2 classes", out.width = '50%'}
 knitr::include_graphics("../results/table1.png")
 ```
 
 To look at whether our null hypothesis is valid, we conducted a simulation with 10000 permutation replicates with the differences in medians. The figure below visualizes the simulated null distribution with the test statistics.
 
-```{r null-distributions, echo=FALSE, fig.cap="Figure 2. The simulation-based distribution of the null hypothesis", out.width = '40%'}
+```{r null-distributions, echo=FALSE, fig.cap="Figure 2. The simulation-based distribution of the null hypothesis", out.width = '50%'}
 knitr::include_graphics("../results/analysis.png")
 ```
 
 Then, we calculated the corresponding p-value of the null distribution for drawing the conclusion:
 
-```{r p-values, echo=FALSE, fig.cap="Table 2. The corresponding p-value of the null hypothesis", out.width = '40%'}
+```{r p-values, echo=FALSE, fig.cap="Table 2. The corresponding p-value of the null hypothesis", out.width = '50%'}
 knitr::include_graphics("../results/table2.png")
 ```
 
