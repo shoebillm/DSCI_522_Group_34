@@ -6,10 +6,8 @@
 #
 # this script takes 2 arguments: a relative filename path to read input data and a relative path to store analysis figure
 #
-# this script leads a simulated null-hypothesis test to see whether the counts of graffiti of 2 areas are different
-# sequencially calculated the median, generated the null distribution,computed the p value and then made a visualization.
-#.
-#
+# this script leads a simulated null-hypothesis test to see whether the counts of graffiti of 2 areas are different.
+# we sequencially calculated the median, generated the null distribution,computed the p value and then made a visualization.
 #
 # Usage: Rscript src/analysis.R --input="data/processed/processed.csv" --output="results/analysis.png"
 
@@ -38,8 +36,9 @@ main <- function(opt) {
   # read data
   graffiti <- read_delim(input_file, delim = ";")
   
-  # define the statistical analysis pipeline:  
-  ## choose test statistics as median
+  # define the statistical analysis pipeline: 
+    
+  ## choose test statistics as medianS
   ## calculate the difference of the medians in each geo_local_area  
   median_count_estimates <- graffiti %>% 
     group_by(geo_local_area) %>% 
