@@ -27,7 +27,7 @@ In the research project, the dataset provides information on the location of sit
 ## Report
 
 The final report can be found
-[here](./report/report.html).
+[here](./doc/report.md).
 
 ## Project Collaboration
 We created the following 4 files that are important for collaboration:
