@@ -31,7 +31,7 @@ main <- function(opt) {
     input_file <- file.path(getwd(), opt$input)
     output_file <- file.path(getwd(), opt$output)
 
-## process data
+## readin data, sparse them with delimetre ";"
     
     graffiti <- read_delim(input_file, delim = ";") %>%
     
