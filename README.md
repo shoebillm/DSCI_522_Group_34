@@ -57,6 +57,9 @@ Rscript src/process_data.R --input="data/dataset.csv" --output="data/processed/p
 # create exploratory data analysis figure and write to file 
 Rscript src/eda_graffiti.R --input="data/processed/processed.csv" --output="results/graffiti_eda.png"
 
+# conduct statistical analysis
+Rscript src/analysis.R --input="data/processed/processed.csv" --output="results/analysis.png"
+
 # render final report
 Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document')"
 ```
