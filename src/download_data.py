@@ -32,12 +32,12 @@ def main(url, output_path):
 
     # save requested file to csv locally
     # handle exception if the file path doesn't exist
-    data = pd.read_csv(url, sep=";", header=None)
+    data = pd.read_csv(url, sep=";")
     try:
-        data.to_csv(output_path, index=False)    
+        data.to_csv(output_path, index=False, sep=';')    
     except:
         os.makedirs(os.path.dirname(output_path))
-        data.to_csv(output_path, index = False)
+        data.to_csv(output_path, index = False, sep=';')
         
     # console output when file-saving is successful
     print("File saved as", output_path)
