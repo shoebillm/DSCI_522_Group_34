@@ -6,7 +6,7 @@ all: data/dataset.csv
 
 # download data
 data/dataset.csv: src/download_data.py
-	python src/download_data.py --url="https://opendata.vancouver.ca/explore/dataset/graffiti/download/?format=csv&timezone=Asia/Shanghai&lang=en&use_labels_for_header=true&csv_separator=%3B" --output_path="./data/dataset.csv"
+    python src/download_data.py --url="https://opendata.vancouver.ca/explore/dataset/graffiti/download/?format=csv&timezone=Asia/Shanghai&lang=en&use_labels_for_header=true&csv_separator=%3B" --output_path="./data/dataset.csv"
 
 ## create eda report
 #output_file_path: required_script_file and input_file_here
