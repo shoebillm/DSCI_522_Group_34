@@ -21,8 +21,8 @@ results/graffiti_eda.png: data/processed/processed.csv src/eda_graffiti.R
 	Rscript src/eda_graffiti.R --input="data/processed/processed.csv" --output="results/graffiti_eda.png"
 
 # statistic analysis:
-# output_file_path: input_file_here required_script_file
-# 	Rscript src/analysis.R --input="data/processed/processed.csv" --output="results/analysis.png"
+results/analysis.png: data/processed/processed.csv src/analysis.R
+	Rscript src/analysis.R --input="data/processed/processed.csv" --output="results/analysis.png"
 
 # render report
 # output_file_path: input_file_here required_script_file 
