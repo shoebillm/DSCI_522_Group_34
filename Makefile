@@ -23,8 +23,8 @@ results/graffiti_eda.png: data/processed/processed.csv src/eda_graffiti.R
 	Rscript src/eda_graffiti.R --input="data/processed/processed.csv" --output="results/graffiti_eda.png"
 
 # statistic analysis:
-results/analysis.png: data/processed/processed.csv src/analysis.R
-	Rscript src/analysis.R --input="data/processed/processed.csv" --output="results/analysis.png"
+results/analysis.png data/analysis/median_count_estimates.csv data/analysis/analysis_table.csv: data/processed/processed.csv src/analysis.R
+	Rscript src/analysis.R --input="data/processed/processed.csv" --output1="results/analysis.png" --output2="data/analysis/median_count_estimates.csv" --output3="data/analysis/analysis_table.csv"
 
 # render report:
 doc/report.md doc/report.html: results/analysis.png doc/report.Rmd
@@ -33,7 +33,7 @@ doc/report.md doc/report.html: results/analysis.png doc/report.Rmd
 # remove generated files
 # usage: make clean
 clean: 
-	rm -rf data/dataset.csv data/processed/processed.csv 
+	rm -rf data/dataset.csv data/processed/processed.csv data/analysis/median_count_estimates.csv data/analysis/analysis_table.csv
 	rm -rf src/eda.md src/eda.html
 	rm -rf results/graffiti_eda.png results/analysis.png
 	rm -rf doc/report.md doc/report.html
