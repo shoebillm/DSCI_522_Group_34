@@ -27,7 +27,7 @@ results/analysis.png data/analysis/median_count_estimates.csv data/analysis/anal
 	Rscript src/analysis.R --input="data/processed/processed.csv" --output1="results/analysis.png" --output2="data/analysis/median_count_estimates.csv" --output3="data/analysis/analysis_table.csv"
 
 # render report:
-doc/report.md doc/report.html: results/analysis.png doc/report.Rmd
+doc/report.md doc/report.html: data/analysis/median_count_estimates.csv data/analysis/analysis_table.csv results/analysis.png doc/report.Rmd
 	Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = c('github_document', 'html_document'))"
 
 # remove generated files
