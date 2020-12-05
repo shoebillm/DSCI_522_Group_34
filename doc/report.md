@@ -1,7 +1,7 @@
 Hypothesis testing for the counts of graffiti in two areas of Vancouver
 ================
 Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu </br>
-2020/11/26 (updated: 2020-11-28)
+2020/11/26 (updated: 2020-12-05)
 
 -   [Summary](#summary)
 -   [Introduction](#introduction)
@@ -11,8 +11,7 @@ Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu </br>
     -   [Results & Discussion](#results-discussion)
 -   [References](#references)
 
-Summary
-=======
+# Summary
 
 In this research project, we tried to answer the research question of
 whether the number of graffiti of Vancouver’s Downtown area is the same
@@ -27,8 +26,7 @@ permutation replicates, plotted the confidence interval of the simulated
 null-distribution with the test statistics, and calculated the p-value
 to draw the conclusion.
 
-Introduction
-============
+# Introduction
 
 Here we attempted to conduct a hypothesis test with a suitable test
 flavor to answer a statistical research question, that is, whether the
@@ -56,11 +54,9 @@ The code used to perform the analysis and create this report can be
 found here:
 <a href="https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R" class="uri">https://github.com/UBC-MDS/DSCI_522_Group_34/blob/main/src/analysis.R</a>.
 
-Methods
-=======
+# Methods
 
-Exploratory Data Analysis
--------------------------
+## Exploratory Data Analysis
 
 The dataset used in this project provides information on the location of
 sites with graffiti as identified by City staff. It was sourced from the
@@ -87,8 +83,7 @@ suitable test flavor, since the median is not as sensitive to extreme
 values as it is mathematically defined by the 50th percentile of a
 distribution.
 
-Statistical Analysis
---------------------
+## Statistical Analysis
 
 To estimate the sampling distribution of the test statistic we need many
 samples generated under the null hypothesis. If the null hypothesis is
@@ -120,8 +115,7 @@ Two tailed permutation test for the median.
 We used delta to represent the difference between the median counts of
 graffiti in each area.
 
-Results & Discussion
---------------------
+## Results & Discussion
 
 First we calculated the median values of the counts of the 2 areas of
 our interest. The medians of the count of graffiti per location of the
@@ -184,12 +178,11 @@ redundant and unrepresentative data points since there are many zero
 values in terms of Downtown and Strathcona areas, leading to a very
 centralized distribution.
 
-References
-==========
+# References
 
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-infer">
+<div id="ref-infer" class="csl-entry">
 
 Bray, Andrew, Chester Ismay, Evgeni Chasnovski, Ben Baumer, and Mine
 Cetinkaya-Rundel. 2020. *Infer: Tidy Statistical Inference*.
@@ -197,36 +190,36 @@ Cetinkaya-Rundel. 2020. *Infer: Tidy Statistical Inference*.
 
 </div>
 
-<div id="ref-quantile">
+<div id="ref-quantile" class="csl-entry">
 
 Bzik, Thomas J. 2014. *Quantile Estimation*. ASTM Standardization.
 <https://www.astm.org/SNEWS/images/ja14_dp.pdf>.
 
 </div>
 
-<div id="ref-graffiti">
+<div id="ref-graffiti" class="csl-entry">
 
 City of Vancouver. 2020. *Graffiti*.
 <https://opendata.vancouver.ca/explore/dataset/graffiti/information/>.
 
 </div>
 
-<div id="ref-docopt">
+<div id="ref-docopt" class="csl-entry">
 
 de Jonge, Edwin. 2018. *Docopt: Command-Line Interface Specification
 Language*. <https://CRAN.R-project.org/package=docopt>.
 
 </div>
 
-<div id="ref-moderndive">
+<div id="ref-moderndive" class="csl-entry">
 
 Ismay, Chester, and Albert Y. Kim. 2019. *Statistical Inference via Data
-Science: A Moderndive into R and the Tidyverse*. New York: Chapman;
+Science: A ModernDive into r and the Tidyverse*. New York: Chapman;
 Hall/CRC.
 
 </div>
 
-<div id="ref-R">
+<div id="ref-R" class="csl-entry">
 
 R Core Team. 2020. *R: A Language and Environment for Statistical
 Computing*. Vienna, Austria: R Foundation for Statistical Computing.
@@ -234,33 +227,33 @@ Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 
 </div>
 
-<div id="ref-Python">
+<div id="ref-Python" class="csl-entry">
 
 Van Rossum, Guido, and Fred L. Drake. 2009. *Python 3 Reference Manual*.
 Scotts Valley, CA: CreateSpace.
 
 </div>
 
-<div id="ref-ggplot2">
+<div id="ref-ggplot2" class="csl-entry">
 
 Wickham, Hadley. 2016. *Ggplot2: Elegant Graphics for Data Analysis*.
 Springer-Verlag New York. <https://ggplot2.tidyverse.org>.
 
 </div>
 
-<div id="ref-tidyverse">
+<div id="ref-tidyverse" class="csl-entry">
 
 Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
 D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
-“Welcome to the tidyverse.” *Journal of Open Source Software* 4 (43):
-1686. <https://doi.org/10.21105/joss.01686>.
+“Welcome to the <span class="nocase">tidyverse</span>.” *Journal of Open
+Source Software* 4 (43): 1686. <https://doi.org/10.21105/joss.01686>.
 
 </div>
 
-<div id="ref-knitr">
+<div id="ref-knitr" class="csl-entry">
 
 Xie, Yihui. 2020. *Knitr: A General-Purpose Package for Dynamic Report
-Generation in R*. <https://yihui.org/knitr/>.
+Generation in r*. <https://yihui.org/knitr/>.
 
 </div>
 
