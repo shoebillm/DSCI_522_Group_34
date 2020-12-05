@@ -41,11 +41,13 @@ The R and Python programming languages [@R; @Python] and the following R and Pyt
 
 The dataset used in this project provides information on the location of sites with graffiti as identified by City staff. It was sourced from the Vancouver Open Data Portal, specifically [this file](https://opendata.vancouver.ca/explore/dataset/graffiti/information). The license of data can be found [here](https://opendata.vancouver.ca/pages/home/).
 
+There are 8,028 rows and 3 columns in our dataset. Each row in the dataset records the counts the number of graffiti incidents by the geographic local area of Vancouver along with the spatial representation of the location by coordinates stored as JSON format.
+
 ```{r distribution in eda, echo=FALSE, fig.cap="Figure 1. Distribution of graffiti count by Vancouver region: downtown and Strathcona area", out.width = '60%'}
 knitr::include_graphics("../src/eda_files/figure-gfm/eda-1.png")
 ```
 
-After conducting exploratory data analysis, we chose the median as the estimator. From the above violin plot of the distributions of two classes, we can observe the sample distributions are skewed to the right. The long right tail of the distributions also makes the median a suitable test flavor, since the median is not as sensitive to extreme values as it is mathematically defined by the 50th percentile of a distribution.
+We are investigating into 2 local areas of Vancouver; they are the 'Downtown' and the 'Strathcona' regions and there are 2,121 observations related our research interest. After conducting exploratory data analysis, we chose the median as the estimator. From the above violin plot of the distributions of two classes, we can observe the sample distributions are skewed to the right. The long right tail of the distributions also makes the median a suitable test flavor, since the median is not as sensitive to extreme values as it is mathematically defined by the 50th percentile of a distribution.
 
 ## Statistical Analysis
 
