@@ -4,7 +4,6 @@
 # usage example: Rscript src/analysis.R --input="data/processed/processed.csv" --output="results/analysis.png"
 
 "This script conducts a simulated null-hypothesis test to see whether the counts of graffiti of 2 areas are different.
-
 Usage: analysis.R --input=<input_file> --output=<output_file>
 Options:
 --input=<input_file>    Takes a local relative path includes filename to read processed csv data
