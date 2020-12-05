@@ -38,7 +38,7 @@ main <- function(opt) {
     delta_sample <- diff(median_count_estimates$median_count)
     
     # save median_count_estimates data with the given file path includes filename
-    write.csv(median_count_estimates, output_file2)
+    write_csv(median_count_estimates, output_file2)
     paste("Median count estimates data saved as", output_file2)
 
     # simulate the null distribution with permutation for 10000 repetitions
@@ -83,7 +83,7 @@ main <- function(opt) {
     analysis_table <- cbind(delta_sample = delta_sample, p_value = p_value)
     
     # save analysis result data with the given file path includes filename
-    write.csv(analysis_table, output_file3)
+    write_csv(analysis_table, output_file3)
     paste("Analysis result data saved as", output_file3)
 
     # save the analysis figure into output_file

@@ -4,7 +4,7 @@
 
 # run all the commands together
 # usage: make all
-all: data/dataset.csv src/eda.md src/eda.html data/processed/processed.csv results/graffiti_eda.png results/analysis.png doc/report.md doc/report.html
+all: data/dataset.csv src/eda.md src/eda.html data/processed/processed.csv results/graffiti_eda.png results/analysis.png data/analysis/median_count_estimates.csv data/analysis/analysis_table.csv doc/report.md doc/report.html
 
 # download data
 data/dataset.csv: src/download_data.py
@@ -27,7 +27,7 @@ results/analysis.png data/analysis/median_count_estimates.csv data/analysis/anal
 	Rscript src/analysis.R --input="data/processed/processed.csv" --output1="results/analysis.png" --output2="data/analysis/median_count_estimates.csv" --output3="data/analysis/analysis_table.csv"
 
 # render report:
-doc/report.md doc/report.html: results/analysis.png doc/report.Rmd
+doc/report.md doc/report.html: data/analysis/median_count_estimates.csv data/analysis/analysis_table.csv results/analysis.png doc/report.Rmd
 	Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = c('github_document', 'html_document'))"
 
 # remove generated files
