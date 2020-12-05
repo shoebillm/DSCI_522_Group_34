@@ -17,20 +17,20 @@ geographic local area of Vancouver along with the spatial representation
 of the location by coordinates stored as JSON format.
 
     ## # A tibble: 6 x 3
-    ##   COUNT `Geo Local Area` Geom                                                   
-    ##   <dbl> <chr>            <chr>                                                  
-    ## 1     2 Downtown         "{\"type\": \"Point\", \"coordinates\": [-123.10795912~
-    ## 2     1 Marpole          "{\"type\": \"Point\", \"coordinates\": [-123.13997544~
-    ## 3     3 Downtown         "{\"type\": \"Point\", \"coordinates\": [-123.12418600~
-    ## 4     2 West Point Grey  "{\"type\": \"Point\", \"coordinates\": [-123.18648218~
-    ## 5     1 Strathcona       "{\"type\": \"Point\", \"coordinates\": [-123.09135856~
-    ## 6     1 Downtown         "{\"type\": \"Point\", \"coordinates\": [-123.10936456~
+    ##   COUNT `Geo Local Area`   Geom                                                 
+    ##   <dbl> <chr>              <chr>                                                
+    ## 1     2 Fairview           "{\"type\": \"Point\", \"coordinates\": [-123.140194~
+    ## 2     1 West End           "{\"type\": \"Point\", \"coordinates\": [-123.131390~
+    ## 3     1 West End           "{\"type\": \"Point\", \"coordinates\": [-123.132078~
+    ## 4     1 Marpole            "{\"type\": \"Point\", \"coordinates\": [-123.128122~
+    ## 5     4 Mount Pleasant     "{\"type\": \"Point\", \"coordinates\": [-123.107106~
+    ## 6     2 Grandview-Woodland "{\"type\": \"Point\", \"coordinates\": [-123.062764~
 
     ## Rows: 8,027
     ## Columns: 3
-    ## $ COUNT            <dbl> 2, 1, 3, 2, 1, 1, 6, 4, 1, 11, 13, 3, 3, 2, 2, 4, ...
-    ## $ `Geo Local Area` <chr> "Downtown", "Marpole", "Downtown", "West Point Gre...
-    ## $ Geom             <chr> "{\"type\": \"Point\", \"coordinates\": [-123.1079...
+    ## $ COUNT            <dbl> 2, 1, 1, 1, 4, 2, 2, 3, 2, 1, 1, 1, 2, 2, 1, 2, 1,...
+    ## $ `Geo Local Area` <chr> "Fairview", "West End", "West End", "Marpole", "Mo...
+    ## $ Geom             <chr> "{\"type\": \"Point\", \"coordinates\": [-123.1401...
 
 We are investigating into 2 local areas of Vancouver; they are the
 ‘Downtown’ and the ‘Strathcona’ regions. We attempt to conduct a
@@ -48,12 +48,12 @@ each interested Vancouver region and the first few line of the dataset .
     ## # A tibble: 6 x 2
     ##   count geo_local_area
     ##   <dbl> <chr>         
-    ## 1     2 Downtown      
-    ## 2     3 Downtown      
-    ## 3     1 Strathcona    
-    ## 4     1 Downtown      
-    ## 5     6 Downtown      
-    ## 6    11 Strathcona
+    ## 1     1 Strathcona    
+    ## 2     1 Strathcona    
+    ## 3    10 Downtown      
+    ## 4     3 Downtown      
+    ## 5     7 Strathcona    
+    ## 6    13 Downtown
 
 | Downtown | Strathcona |
 |---------:|-----------:|
