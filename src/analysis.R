@@ -6,10 +6,10 @@
 "This script conducts a simulated null-hypothesis test to see whether the counts of graffiti of 2 areas are different.
 Usage: analysis.R --input=<input_file> --output1=<output_file1> --output2=<output_file2> --output3=<output_file3>
 Options:
---input=<input_file>    Takes a local relative path includes filename to read processed csv data
---output1=<output_file1>  Takes a local relative path includes filename to store analysis figure
---output2=<output_file2>  Takes a local relative path includes filename to store median count estimates table
---output3=<output_file3>  Takes a local relative path includes filename to store analysis result table
+--input=<input_file>    Takes a local relative path including filename to read processed csv data
+--output1=<output_file1>  Takes a local relative path including filename to store analysis figure
+--output2=<output_file2>  Takes a local relative path including filename to store median count estimates table
+--output3=<output_file3>  Takes a local relative path including filename to store analysis result table
 " -> doc
 
 # import libraries/packages
