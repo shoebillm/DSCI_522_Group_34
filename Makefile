@@ -4,7 +4,7 @@
 
 # run all the commands together
 # usage: make all
-all: data/dataset.csv src/eda.md src/eda.html data/processed/processed.csv results/graffiti_eda.png results/analysis.png doc/report.md doc/report.html
+all: data/dataset.csv src/eda.md src/eda.html data/processed/processed.csv results/graffiti_eda.png results/analysis.png data/analysis/median_count_estimates.csv data/analysis/analysis_table.csv doc/report.md doc/report.html
 
 # download data
 data/dataset.csv: src/download_data.py
