@@ -43,13 +43,11 @@ To replicate the analysis, clone this GitHub repository, install the dependencie
 
 ```
 make all
-
 ```
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
 ```
 make clean
-
 ```
 
 ## Dependencies
