@@ -36,28 +36,27 @@ main <- function(opt) {
   # read data
   graffiti <- read_delim(input_file, delim = ";")
   
-  # define the statistical analysis pipeline: 
-    
-  ## choose test statistics as medianS
-  ## calculate the difference of the medians in each geo_local_area  
+  # define the statistical analysis pipeline:   
+  # choose test statistics as medianS
+  # calculate the difference of the medians in each geo_local_area  
   median_count_estimates <- graffiti %>% 
     group_by(geo_local_area) %>% 
     summarize(median_count = median(count))
   
-  ## calculate the difference of sample median, store it into a variable "delta_sample"
+  # calculate the difference of sample median, store it into a variable "delta_sample"
   delta_sample <- diff(median_count_estimates$median_count)
     
   # use permutation method to fulfill the simulation, 
   set.seed(1)
     
-  ## simulate the null distribution
+  # simulate the null distribution
   null_distribution <- graffiti %>% 
     specify(formula = count ~ geo_local_area)  %>% 
     
-    ## made the assumption that each observation is independent with others
+    # made the assumption that each observation is independent with others
     hypothesize(null = "independence") %>% 
     
-    ## do 10000 times permutations to generate the null hypothesis distribution
+    # do 10000 times permutations to generate the null hypothesis distribution
     generate(reps = 10000, type = "permute")  %>% 
     calculate(stat = "diff in medians", 
               order = c("Downtown", "Strathcona"))
@@ -70,7 +69,7 @@ main <- function(opt) {
   # choose the threshold is 0.5 in two-side test
   threshold <- quantile(null_distribution$stat, c(0.025, 0.975))
     
-  ## visualize the positions of the 2 quantiles and the variable delta_sample we defined previously
+  # visualize the positions of the 2 quantiles and the variable delta_sample we defined previously
   analysis_dist <- h0_dist + 
     geom_vline(xintercept = c(threshold[[1]], threshold[[2]]), 
                color = "blue",
@@ -81,7 +80,7 @@ main <- function(opt) {
   p_value <- null_distribution %>% 
     get_pvalue(obs_stat = delta_sample, direction = "both")
     
-  ## generate a table contains the 2 important parametres
+  # generate a table contains the 2 important parametres
   analysis_table <- cbind(delta_sample=delta_sample, p_value=p_value)
   
   # save the analysis figure into output_file
