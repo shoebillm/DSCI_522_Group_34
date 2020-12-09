@@ -50,6 +50,9 @@ To reset the repo to a clean state, with no intermediate or results files, run t
 make clean
 ```
 
+## Makefile Dependency Diagram
+![Makefile Dependency Diagram](./Makefile.png)
+
 ## Dependencies
 
   - Python 3.8.3 and Python packages:
