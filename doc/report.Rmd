@@ -72,7 +72,7 @@ We used delta to represent the difference between the median counts of graffiti 
 First we calculated the median values of the counts of the 2 areas of our interest. The medians of the count of graffiti per location of the two areas are listed below:
 
 ```{r median value of the 2 classes, echo=FALSE, comment=FALSE, warning=FALSE, message=FALSE,}
-knitr::kable(readr::read_csv("../data/analysis/median_count_estimates.csv"), "simple") 
+knitr::kable(readr::read_csv("../data/analysis/estimation.csv"), "simple") 
 ```
 
 Table 1. Results of computed median values of the 2 classes
