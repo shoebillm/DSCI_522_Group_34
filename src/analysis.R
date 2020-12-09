@@ -1,7 +1,7 @@
 # analysis.R
 # author: Kangbo Lu, Mengyuan Zhu, Mitchie Zhao, Siqi Zhou
 # date: 2020-11-28
-# usage example: Rscript src/analysis.R --input="data/processed/processed.csv" --output1="results/analysis.png" --output2="data/analysis/median_count_estimates.csv" --output3="data/analysis/analysis_table.csv"
+# usage example: Rscript src/analysis.R --input="data/processed/processed.csv" --output1="results/analysis.png" --output2="data/analysis/estimation.csv" --output3="data/analysis/analysis_table.csv"
 
 "This script conducts a simulated null-hypothesis test to see whether the counts of graffiti of 2 areas are different.
 Usage: analysis.R --input=<input_file> --output1=<output_file1> --output2=<output_file2> --output3=<output_file3>
