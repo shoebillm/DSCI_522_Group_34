@@ -1,7 +1,7 @@
 Hypothesis testing for the counts of graffiti in two areas of Vancouver
 ================
 Kangbo Lu, Siqi Zhou, Mitchie Zhao, Mengyuan Zhu </br>
-2020/11/26 (updated: 2020-12-05)
+2020/11/26 (updated: 2020-12-10)
 
 -   [Summary](#summary)
 -   [Introduction](#introduction)
