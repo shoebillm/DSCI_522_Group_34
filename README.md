@@ -51,6 +51,7 @@ make clean
 ```
 
 ## Makefile Dependency Diagram
+Click the image below to view it with the original size.
 ![Makefile Dependency Diagram](./Makefile.png)
 
 ## Dependencies
